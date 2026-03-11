@@ -1,0 +1,132 @@
+---
+import { Icon } from "astro-icon/components";
+
+const projects = [
+    {
+        title: "Fondo Royale",
+        status: "Finished",
+        statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
+        img: "/fondo-royale.png",
+        description:
+            "App Full Stack de gestión de usuarios y transacciones simulando un entorno financiero real. Arquitectura de microservicios y seguridad avanzada.",
+        tags: ["Java", "Spring Boot", "Android", "kotlin"],
+        repoLink: "https://github.com/Jachias21/FondoCasinoRoyale_app",
+        demoLink: null,
+    },
+    {
+        title: "MeteoBCN",
+        status: "Finished",
+        statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
+        img: "/meteo-bcn.png",
+        description:
+        'Pipeline automatizado "End-to-End" para la predicción climática. Integra procesos ETL y modelos Random Forest para predecir series temporales.',
+        tags: ["Python", "ML (sklearn)", "ETL"],
+        repoLink: "https://github.com/nilarroyo43/Proyect3_IABD",
+        demoLink: null,
+    },
+    {
+        title: "IA Delivery",
+        status: "Finished",
+        img: "/ia-delivery.png",
+        statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
+        description:
+        "Sistema inteligente de rutas logísticas (VRP). Utiliza algoritmos de Clustering para optimizar flotas y reducir costes operativos.",
+        tags: ["Python", "ML (sklearn)", "Numpy"],
+        repoLink: "https://github.com/ronaldintriago/proyect1_IABD",
+        demoLink: null,
+    },
+    {
+        title: "ReWikiDish",
+        status: "In development",
+        statusColor: "text-amber-400 bg-amber-400/10 border-amber-400/20",
+        img: "/rewikidish.png",
+        description:
+            "Plataforma integral con arquitectura desacoplada. Backend potente en Django REST que alimenta backoffice y app móvil en Flutter.",
+        tags: ["Python", "Django", "Flutter"],
+        repoLink: "https://github.com/nilarroyo43/ReWikiDish",
+        demoLink: null,
+    },
+];
+---
+
+<section id="proyectos" class="py-24 container mx-auto px-6 max-w-6xl">
+    <div class="mb-16">
+        <span class="text-sky-400 font-bold tracking-widest uppercase text-xs"
+            >Trabajos personales</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Proyectos</h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+        {
+            projects.map((project) => (
+                <article class="bg-[#161b22] rounded-2xl overflow-hidden border border-gray-800 hover:border-sky-500/50 transition-all duration-500 group shadow-lg hover:shadow-sky-500/10 flex flex-col">
+                    <div class="h-48 bg-gray-800 relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#161b22] to-transparent opacity-60 z-10" />
+                        <div class="w-full h-full bg-[#1c2128] flex items-center justify-center text-gray-700 group-hover:scale-105 transition duration-700">
+                            <img
+                                src={project.img}
+                                alt={project.title}
+                                class="w-full h-full object-cover transition-all duration-800 group-hover:scale-100 group-hover:object-contain bg-[#1c2128]"
+                            />
+                        </div>z
+                        <div class="absolute top-4 left-4 z-20">
+                            <span
+                                class={`px-2.5 py-1 rounded-full text-xs font-bold border ${project.statusColor} backdrop-blur-xl shadow-lg`}
+                            >
+                                {project.status}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-6 md:p-6 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-white group-hover:text-sky-400 transition-colors">
+                                {project.title}
+                            </h3>
+
+                            <div class="flex gap-2">
+                                <a
+                                    href={project.repoLink}
+                                    target="_blank"
+                                    class="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 text-gray-300 hover:text-white transition border border-gray-700"
+                                    title="Code"
+                                >
+                                    <Icon
+                                        name="tabler:brand-github"
+                                        class="w-5 h-5"
+                                    />
+                                </a>
+                                {project.demoLink && (
+                                    <a
+                                        href={project.demoLink}
+                                        target="_blank"
+                                        class="p-2 bg-sky-600/10 text-sky-400 rounded-lg hover:bg-sky-600/20 transition border border-sky-600/20"
+                                        title="Live Demo"
+                                    >
+                                        <Icon
+                                            name="tabler:external-link"
+                                            class="w-5 h-5"
+                                        />
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+
+                        <p class="text-gray-300 text-lg mb-6 leading-relaxed font-light">
+                            {project.description}
+                        </p>
+
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            {project.tags.map((tag) => (
+                                <span class="px-2.5 py-1 bg-gray-800/50 text-sky-200/80 text-xs font-medium rounded-md border border-gray-700/50">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+</section>

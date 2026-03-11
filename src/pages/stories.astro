@@ -1,0 +1,37 @@
+---
+// src/pages/stories.astro
+import { getEntry } from 'astro:content';
+
+const plan = await getEntry('findes', '14-03-2026'); // Usamos el ID de tu JSON
+const { actividades, comida, peliculas } = plan.data;
+---
+
+<html lang="es">
+  <body class="bg-black text-white m-0 p-0 overflow-hidden">
+    <div class="flex overflow-x-auto snap-x snap-mandatory h-screen w-full">
+      
+      {actividades.map((act: { tipo: unknown; desc: unknown; }) => (
+        <div class="snap-center shrink-0 w-screen h-screen flex flex-col justify-end p-8 pb-24 border-r border-gray-800 bg-emerald-900/20">
+          <span class="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-2">{act.tipo}</span>
+          <h2 class="text-4xl font-bold mb-4">{act.desc}</h2>
+        </div>
+      ))}
+
+      {comida.map((com: { momento: unknown; lugar: unknown; ubicacion: string | URL | null | undefined; }) => (
+        <div class="snap-center shrink-0 w-screen h-screen flex flex-col justify-end p-8 pb-24 border-r border-gray-800 bg-orange-900/20">
+          <span class="text-orange-400 font-bold uppercase tracking-widest text-sm mb-2">{com.momento}</span>
+          <h2 class="text-4xl font-bold mb-4">{com.lugar}</h2>
+          <a href={com.ubicacion} target="_blank" class="text-orange-300 underline mt-2">📍 Ver en el mapa</a>
+        </div>
+      ))}
+
+      {peliculas.map((peli: { momento: unknown; pelicula: unknown; }) => (
+        <div class="snap-center shrink-0 w-screen h-screen flex flex-col justify-end p-8 pb-24 bg-purple-900/20">
+          <span class="text-purple-400 font-bold uppercase tracking-widest text-sm mb-2">{peli.momento}</span>
+          <h2 class="text-4xl font-bold mb-4">🍿 {peli.pelicula}</h2>
+          </div>
+      ))}
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "id": "finde-14-marzo",
+  "fecha": "2026-03-14",
+  "titulo": "Finde de desconexión en BCN",
+  "imagens_splash": "https://www.example.com/images/finde-14-marzo-splash.png",
+  "actividades": [
+    { "tipo": "deporte", "desc": "Pádel el sábado por la mañana 🎾" },
+    { "tipo": "amigos", "desc": "Tardeo con el grupo en Gracia 🍻" }
+  ],
+  "comida": [
+    { "momento": "Cena Sábado", "lugar": "Pizzería Nápoles 🍕", "ubicacion": "https://www.google.com/maps/place/Pizzería+Nápoles/@41.385094,2.177692,17z/data=!3m1!4b1!4m8!3m7!1s0x12a4a3b5f8c9d5f9:0x1c8c8c8c8c8c8c8c!8m2!3d41.385094!4d2.177692!9m0!" },
+    { "momento": "Desayuno Domingo", "lugar": "Churros en casa ☕", "ubicacion": "https://www.google.com/maps/place/Casa/@41.385094,2.177692,17z/data=!3m1!4b1!4m8!3m7!1s0x12a4a3b5f8c9d5f9:0x1c8c8c8c8c8c8c8c!8m2!3d41.385094!4d2.177692!9m0!" }
+  ],
+  "peliculas": [
+    { "momento": "Despues del partido", "pelicula": "Harry Potter y el Prisionero de Azkaban", "url_cartel": "https://www.filmaffinity.com/es/film674913.html" },
+    { "momento": "Sabado noche", "pelicula": "Matilda", "url_cartel": "https://www.filmaffinity.com/es/film543210.html" }
+  ]
+}

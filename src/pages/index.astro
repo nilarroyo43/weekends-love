@@ -1,0 +1,26 @@
+---
+// src/pages/index.astro
+import { getEntry } from 'astro:content';
+
+// Buscamos el plan actual
+const plan = await getEntry('findes', '14-03-2026'); // Usamos el nombre de tu JSON
+const { titulo } = plan.data;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Nuestra Cápsula</title>
+  </head>
+  <body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-6 text-center">
+    
+    <h1 class="text-4xl font-bold mb-4 text-rose-400">{titulo}</h1>
+    <p class="text-gray-400 mb-10">La espera casi termina...</p>
+
+    <a href="/stories" class="px-8 py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-full font-bold shadow-lg shadow-rose-500/30 transition-all">
+      ¿Qué haremos este finde? ✨
+    </a>
+
+  </body>
+</html>
