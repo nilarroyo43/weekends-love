@@ -18,6 +18,50 @@ const { title } = Astro.props;
 	<body class="bg-[#1F1512] text-orange-50 font-sans antialiased overflow-x-hidden text-lg selection:bg-orange-500 selection:text-white">
 		<slot />
 	</body>
+    <style is:global>
+  /* 1. Latido del botón */
+  @keyframes latido {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.08); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.08); }
+    60% { transform: scale(1); }
+  }
+  .animate-latido {
+    animation: latido 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* 2. Entrada de las Stories */
+  @keyframes slideUpFade {
+    0% { opacity: 0; transform: translateY(30px) scale(0.95); filter: blur(5px); }
+    100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+  }
+  .animate-story-in {
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* 3. Zoom lento para la imagen */
+  @keyframes slow-zoom {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+  .animate-slow-zoom {
+    animation: slow-zoom 25s ease-in-out infinite;
+  }
+
+  /* 4. La Tapa del Regalo (Efecto explosivo) */
+  .tapa-abierta {
+    transform: translateY(-150px) rotate(35deg) scale(1.3) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: all 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important; 
+  }
+
+  /* 5. Colores de la barra de scroll */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #1a1412; }
+  ::-webkit-scrollbar-thumb { background: #ea580c; border-radius: 4px; }
+</style>
 </html>
 
 <style is:global>
