@@ -1,14 +1,28 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getEntry } from 'astro:content';
-const id_finde = '14-03-2026';
-const plan = await getEntry('findes', id_finde);
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 1. Le decimos a Astro que cree una página por cada archivo JSON que exista
+export async function getStaticPaths() {
+  const todosLosFindes = await getCollection('findes');
+  return todosLosFindes.map((plan) => ({
+    params: { id: plan.id },
+    props: { plan },
+  }));
+}
+
+// 2. Extraemos los datos del plan actual
+const { plan } = Astro.props;
 const { actividades, comida, peliculas } = plan.data;
 ---
 
 <Layout title="El Plan">
-  <div class="flex overflow-x-auto snap-x snap-mandatory h-screen w-full">
+  <div class="flex overflow-x-auto snap-x snap-mandatory h-screen w-full relative">
     
+    <a href="/" class="fixed top-6 left-6 z-50 bg-black/50 text-white p-3 rounded-full backdrop-blur-md">
+      ← Volver
+    </a>
+
     {actividades.map((act) => (
       <div class="snap-center shrink-0 w-screen h-screen flex flex-col justify-end p-8 pb-24 border-r border-gray-800 bg-emerald-900/20">
         <span class="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-2">{act.tipo}</span>

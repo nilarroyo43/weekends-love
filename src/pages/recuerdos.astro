@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Obtenemos todos los JSON y los ordenamos por fecha (del más reciente al más antiguo)
+const todosLosFindes = await getCollection('findes');
+const recuerdos = todosLosFindes.sort((a, b) => new Date(b.data.fecha).getTime() - new Date(a.data.fecha).getTime());
+---
+
+<Layout title="Nuestros Recuerdos">
+  <main class="min-h-screen p-6 pt-12">
+    
+    <div class="flex items-center justify-between mb-10">
+      <h1 class="text-3xl font-bold text-rose-400">Nuestros Recuerdos</h1>
+      <a href="/" class="text-gray-400 hover:text-white">Volver</a>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6">
+      {recuerdos.map((recuerdo) => (
+        <a href={`/plan/${recuerdo.id}`} class="block relative h-48 rounded-2xl overflow-hidden group border border-gray-800 shadow-lg">
+          
+          <img src={recuerdo.data.imagens_splash} alt={recuerdo.data.titulo} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+          
+          <div class="absolute bottom-0 left-0 p-5">
+            <p class="text-rose-300 text-sm font-bold tracking-widest uppercase mb-1">
+              {new Date(recuerdo.data.fecha).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}
+            </p>
+            <h2 class="text-2xl font-bold text-white">{recuerdo.data.titulo}</h2>
+          </div>
+        </a>
+      ))}
+    </div>
+
+  </main>
+</Layout>
