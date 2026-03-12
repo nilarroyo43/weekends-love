@@ -2,48 +2,35 @@
   "id": "finde-14-marzo",
   "fecha": "2026-03-14",
   "titulo": "Finde de desconexión en BCN",
-  "imagens_splash": "https://www.example.com/images/finde-14-marzo-splash.png",
+  "imagens_splash": "/ps2.jpg",
   
-  "img_circulo_actividades": "https://images.unsplash.com/photo-1543326727-cf6c39e8f84c",
-  "img_circulo_comida": "https://images.unsplash.com/photo-1514933651103-005eec06c04b",
-  "img_circulo_peliculas": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
+  "img_circulo_actividades": "/img/circulo-amigos.jpg",
+  "img_circulo_comida": "/img/circulo-pizza.jpg",
+  "img_circulo_peliculas": "/img/circulo-cine.jpg",
 
   "actividades": [
     { 
-      "tipo": "deporte", 
-      "desc": "Pádel el sábado por la mañana 🎾",
-      "imagen": "https://url-foto-pista-padel.jpg"
-    },
-    { 
       "tipo": "amigos", 
-      "desc": "Tardeo con el grupo en Gracia 🍻",
-      "imagen": "https://url-foto-cervezas.jpg"
+      "desc": "Tardeo en Gracia 🍻",
+      "detalle": "Iremos con los amigos por la tarde a algún bar chulo y nos lo pasaremos en grande charlando y bebiendo cerveza hasta que caiga el sol.",
+      "imagen": "/img/foto-bar.jpg"
     }
   ],
   "comida": [
     { 
       "momento": "Cena Sábado", 
       "lugar": "Pizzería Nápoles 🍕", 
+      "detalle": "He reservado mesa para las 21:30 en tu sitio favorito. ¡Toca ponerse las botas con una buena pizza de trufa!",
       "ubicacion": "https://www.google.com/maps/place/Pizzería+Nápoles/@41.385094,2.177692,17z/data=!3m1!4b1!4m8!3m7!1s0x12a4a3b5f8c9d5f9:0x1c8c8c8c8c8c8c8c!8m2!3d41.385094!4d2.177692!9m0!",
-      "imagen": "https://url-foto-pizza.jpg"
-    },
-    { 
-      "momento": "Desayuno Domingo", 
-      "lugar": "Churros en casa ☕", 
-      "ubicacion": "https://www.google.com/maps/place/Casa/@41.385094,2.177692,17z/data=!3m1!4b1!4m8!3m7!1s0x12a4a3b5f8c9d5f9:0x1c8c8c8c8c8c8c8c!8m2!3d41.385094!4d2.177692!9m0!",
-      "imagen": "https://url-foto-churros.jpg"
+      "imagen": "/img/pizza-napoles.jpg"
     }
   ],
   "peliculas": [
     { 
-      "momento": "Despues del partido", 
-      "pelicula": "Harry Potter y el Prisionero de Azkaban", 
-      "url_cartel": "https://pics.filmaffinity.com/harry_potter_y_el_prisionero_de_azkaban-poster.jpg" 
-    },
-    { 
-      "momento": "Sabado noche", 
+      "momento": "Sábado noche", 
       "pelicula": "Matilda", 
-      "url_cartel": "https://pics.filmaffinity.com/matilda-poster.jpg" 
+      "detalle": "Sesión de manta y peli en el sofá para recordar la infancia. Las palomitas corren de mi cuenta.",
+      "url_cartel": "/img/poster-matilda.jpg"
     }
   ]
 }

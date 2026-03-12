@@ -12,7 +12,6 @@ const { categoria, imagen, label, colorBorde } = Astro.props;
   
   <img 
     src={imagen} 
-    style={`view-transition-name: img-${categoria};`}
     class={`absolute inset-0 z-0 w-full h-full object-cover rounded-full border-[6px] shadow-2xl transition-transform duration-500 group-hover:scale-105 ${colorBorde}`} 
     alt={label} 
   />

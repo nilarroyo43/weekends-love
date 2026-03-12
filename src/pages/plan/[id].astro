@@ -30,7 +30,7 @@ const {
     
     <a href="/" class="absolute top-6 left-6 text-orange-500 hover:text-rose-500 transition-colors z-50 uppercase tracking-[0.2em] text-xs font-bold">← Volver</a>
     
-    <h1 class="text-4xl md:text-5xl font-black md:mb-8 text-orange-950 uppercase tracking-tighter drop-shadow-sm mt-12 md:mt-0">Descubre el plan...</h1>
+    <h1 transition:name="titulo-plan" class="text-4xl md:text-5xl font-black md:mb-8 text-orange-950 uppercase tracking-tighter drop-shadow-sm mt-12 md:mt-0">Descubre el plan...</h1>
     
     <div class="flex flex-col md:flex-row items-center justify-center gap-32 md:gap-40 w-full max-w-7xl mx-auto mt-16 md:mt-12">
       
@@ -48,62 +48,23 @@ const {
 
     </div>
   </main>
-  <div
-    id="view-actividades"
-    class="story-view hidden fixed inset-0 z-50 bg-orange-50"
-  >
-    {
-      actividades.map((act, i) => (
-        <StorySlide
-          index={i}
-          categoria="actividades"
-          etiqueta={act.tipo}
-          titulo={act.desc}
-          imagen={act.imagen || img_circulo_actividades}
-          colorTexto="text-emerald-400"
-          colorFondo="bg-emerald-900/10"
-        />
-      ))
-    }
+
+  <div id="view-actividades" class="story-view hidden fixed inset-0 z-50 bg-orange-50">
+    {actividades.map((act, i) => (
+      <StorySlide index={i} categoria="actividades" etiqueta={act.tipo} titulo={act.desc} detalle={act.detalle} imagen={act.imagen || img_circulo_actividades} colorTexto="text-emerald-400" colorFondo="bg-emerald-900/10" />
+    ))}
   </div>
 
-  <div
-    id="view-comida"
-    class="story-view hidden fixed inset-0 z-50 bg-[#0a0a0a]"
-  >
-    {
-      comida.map((com, i) => (
-        <StorySlide
-          index={i}
-          categoria="comida"
-          etiqueta={com.momento}
-          titulo={com.lugar}
-          imagen={com.imagen || img_circulo_comida}
-          linkMapa={com.ubicacion}
-          colorTexto="text-orange-400"
-          colorFondo="bg-orange-900/10"
-        />
-      ))
-    }
+  <div id="view-comida" class="story-view hidden fixed inset-0 z-50 bg-orange-50">
+    {comida.map((com, i) => (
+      <StorySlide index={i} categoria="comida" etiqueta={com.momento} titulo={com.lugar} detalle={com.detalle} imagen={com.imagen || img_circulo_comida} linkMapa={com.ubicacion} colorTexto="text-orange-400" colorFondo="bg-orange-900/10" />
+    ))}
   </div>
 
-  <div
-    id="view-peliculas"
-    class="story-view hidden fixed inset-0 z-50 bg-[#0a0a0a]"
-  >
-    {
-      peliculas.map((peli, i) => (
-        <StorySlide
-          index={i}
-          categoria="peliculas"
-          etiqueta={peli.momento}
-          titulo={peli.pelicula}
-          imagen={peli.url_cartel}
-          colorTexto="text-purple-400"
-          colorFondo="bg-purple-900/10"
-        />
-      ))
-    }
+  <div id="view-peliculas" class="story-view hidden fixed inset-0 z-50 bg-orange-50">
+    {peliculas.map((peli, i) => (
+      <StorySlide index={i} categoria="peliculas" etiqueta={peli.momento} titulo={peli.pelicula} detalle={peli.detalle} imagen={peli.url_cartel} colorTexto="text-purple-400" colorFondo="bg-purple-900/10" />
+    ))}
   </div>
 </Layout>
 
@@ -118,10 +79,22 @@ const {
         const tapa = btn.querySelector('.regalo-tapa');
 
         if (!estadoRegalos[categoria]) {
-          tapa.classList.remove('group-hover:-rotate-3', 'group-hover:scale-105');
-          tapa.classList.add('-translate-y-40', 'rotate-12', 'scale-110', 'opacity-0');
+          // PRIMER CLIC: Animación Fancy (Pop)
+          tapa.classList.remove('group-hover:-rotate-3', 'group-hover:scale-105', 'transition-transform', 'duration-700', 'ease-[cubic-bezier(0.34,1.56,0.64,1)]');
+          tapa.classList.add('animate-regalo-pop');
           estadoRegalos[categoria] = true;
+
+          setTimeout(() => {
+            if (tapa) tapa.style.display = 'none';
+          }, 900);
+
+          const imagenFondo = btn.querySelector('img');
+          if (imagenFondo) {
+            imagenFondo.style.viewTransitionName = `img-${categoria}`;
+          }
+
         } else {
+          // SEGUNDO CLIC: Entrar en la story
           abrirStory(categoria);
         }
       });
@@ -132,7 +105,6 @@ const {
       const slides = vista.querySelectorAll('.story-slide');
       if (slides.length === 0) return;
 
-      // Esta función es la que mueve el DOM (quita el menú y pone la story)
       const ejecutarCambioDOM = () => {
         menuCategorias.classList.add('hidden');
         vista.classList.remove('hidden');
@@ -143,11 +115,10 @@ const {
         slides[0].classList.add('flex');
       };
 
-      // Invocamos la API nativa de transiciones
       if (document.startViewTransition) {
         document.startViewTransition(() => ejecutarCambioDOM());
       } else {
-        ejecutarCambioDOM(); // Fallback si el móvil es muy viejo
+        ejecutarCambioDOM();
       }
 
       let currentSlide = 0;
@@ -156,7 +127,6 @@ const {
 
         currentSlide++;
         if (currentSlide < slides.length) {
-          // Fundido cruzado entre slides
           if (document.startViewTransition) {
             document.startViewTransition(() => {
               slides[currentSlide - 1].classList.add('hidden');
@@ -166,7 +136,6 @@ const {
             });
           }
         } else {
-          // Volver al menú (¡La imagen volverá a encogerse hacia el círculo!)
           vista.removeEventListener('click', avanzarSlide);
           if (document.startViewTransition) {
             document.startViewTransition(() => {
@@ -187,5 +156,16 @@ const {
   ::view-transition-group(*) {
     animation-duration: 0.8s;
     animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  /* Animación Fancy para la tapa (Squash and Stretch -> Vuelo) */
+  .animate-regalo-pop {
+    animation: regalo-pop 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+  
+  @keyframes regalo-pop {
+    0%   { transform: scale(1) translateY(0) rotate(0); opacity: 1; }
+    20%  { transform: scale(1.1, 0.9) translateY(15px) rotate(-8deg); opacity: 1; } /* Se aplasta (coge impulso) */
+    45%  { transform: scale(0.95, 1.1) translateY(-60px) rotate(15deg); opacity: 1; } /* Salta hacia arriba */
+    100% { transform: scale(1.4) translateY(-400px) rotate(60deg); opacity: 0; pointer-events: none; } /* Vuela y desaparece */
   }
 </style>

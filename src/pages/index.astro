@@ -16,7 +16,7 @@ const { titulo, fecha, imagens_splash } = plan.data;
     
     <p class="text-orange-400 tracking-[0.3em] text-xs font-bold uppercase mb-4">Drop Exclusivo</p>
     
-    <h1 class="text-5xl md:text-7xl font-black mb-16 text-orange-950 uppercase tracking-tighter">{titulo}</h1>
+    <h1 transition:name="titulo-plan" class="text-5xl md:text-7xl font-black mb-16 text-orange-950 uppercase tracking-tighter drop-shadow-sm">{titulo}</h1>
 
     <div id="countdown" data-fecha={fecha} class="flex items-start justify-center gap-4 md:gap-12 text-6xl md:text-[9rem] leading-none font-black text-orange-950 mb-24 font-sans tracking-tighter drop-shadow-sm">
       <div class="flex flex-col items-center">
