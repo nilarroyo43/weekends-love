@@ -3,16 +3,47 @@
   "fecha": "2026-03-14",
   "titulo": "Finde de desconexión en BCN",
   "imagens_splash": "https://www.example.com/images/finde-14-marzo-splash.png",
+  
+  "img_circulo_actividades": "https://images.unsplash.com/photo-1543326727-cf6c39e8f84c",
+  "img_circulo_comida": "https://images.unsplash.com/photo-1514933651103-005eec06c04b",
+  "img_circulo_peliculas": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
+
   "actividades": [
-    { "tipo": "deporte", "desc": "Pádel el sábado por la mañana 🎾" },
-    { "tipo": "amigos", "desc": "Tardeo con el grupo en Gracia 🍻" }
+    { 
+      "tipo": "deporte", 
+      "desc": "Pádel el sábado por la mañana 🎾",
+      "imagen": "https://url-foto-pista-padel.jpg"
+    },
+    { 
+      "tipo": "amigos", 
+      "desc": "Tardeo con el grupo en Gracia 🍻",
+      "imagen": "https://url-foto-cervezas.jpg"
+    }
   ],
   "comida": [
-    { "momento": "Cena Sábado", "lugar": "Pizzería Nápoles 🍕", "ubicacion": "https://www.google.com/maps/place/Pizzería+Nápoles/@41.385094,2.177692,17z/data=!3m1!4b1!4m8!3m7!1s0x12a4a3b5f8c9d5f9:0x1c8c8c8c8c8c8c8c!8m2!3d41.385094!4d2.177692!9m0!" },
-    { "momento": "Desayuno Domingo", "lugar": "Churros en casa ☕", "ubicacion": "https://www.google.com/maps/place/Casa/@41.385094,2.177692,17z/data=!3m1!4b1!4m8!3m7!1s0x12a4a3b5f8c9d5f9:0x1c8c8c8c8c8c8c8c!8m2!3d41.385094!4d2.177692!9m0!" }
+    { 
+      "momento": "Cena Sábado", 
+      "lugar": "Pizzería Nápoles 🍕", 
+      "ubicacion": "https://www.google.com/maps/place/Pizzería+Nápoles/@41.385094,2.177692,17z/data=!3m1!4b1!4m8!3m7!1s0x12a4a3b5f8c9d5f9:0x1c8c8c8c8c8c8c8c!8m2!3d41.385094!4d2.177692!9m0!",
+      "imagen": "https://url-foto-pizza.jpg"
+    },
+    { 
+      "momento": "Desayuno Domingo", 
+      "lugar": "Churros en casa ☕", 
+      "ubicacion": "https://www.google.com/maps/place/Casa/@41.385094,2.177692,17z/data=!3m1!4b1!4m8!3m7!1s0x12a4a3b5f8c9d5f9:0x1c8c8c8c8c8c8c8c!8m2!3d41.385094!4d2.177692!9m0!",
+      "imagen": "https://url-foto-churros.jpg"
+    }
   ],
   "peliculas": [
-    { "momento": "Despues del partido", "pelicula": "Harry Potter y el Prisionero de Azkaban", "url_cartel": "https://www.filmaffinity.com/es/film674913.html" },
-    { "momento": "Sabado noche", "pelicula": "Matilda", "url_cartel": "https://www.filmaffinity.com/es/film543210.html" }
+    { 
+      "momento": "Despues del partido", 
+      "pelicula": "Harry Potter y el Prisionero de Azkaban", 
+      "url_cartel": "https://pics.filmaffinity.com/harry_potter_y_el_prisionero_de_azkaban-poster.jpg" 
+    },
+    { 
+      "momento": "Sabado noche", 
+      "pelicula": "Matilda", 
+      "url_cartel": "https://pics.filmaffinity.com/matilda-poster.jpg" 
+    }
   ]
 }
