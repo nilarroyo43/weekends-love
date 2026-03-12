@@ -5,38 +5,23 @@ interface Props {
   label: string;
   colorBorde: string;
 }
-
 const { categoria, imagen, label, colorBorde } = Astro.props;
 ---
 
-<div
-  class="categoria-btn group relative w-40 h-40 mx-auto cursor-pointer"
-  data-categoria={categoria}
->
-  <img
-    src={imagen}
-    class={`absolute inset-0 w-full h-full object-cover rounded-full border-4 shadow-xl transition-transform duration-500 group-hover:scale-105 ${colorBorde}`}
-    alt={label}
+<div class="categoria-btn group relative w-72 h-72 mx-auto cursor-pointer" data-categoria={categoria}>
+  
+  <img 
+    src={imagen} 
+    style={`view-transition-name: img-${categoria};`}
+    class={`absolute inset-0 z-0 w-full h-full object-cover rounded-full border-[6px] shadow-2xl transition-transform duration-500 group-hover:scale-105 ${colorBorde}`} 
+    alt={label} 
   />
-
-  <div
-    class="regalo-tapa absolute inset-0 z-10 flex items-center justify-center bg-rose-600 rounded-full border-4 border-rose-400 transition-all duration-700 transform origin-bottom group-hover:-rotate-3 group-hover:scale-105"
-  >
-    <span class="text-5xl drop-shadow-md">🎁</span>
+  
+  <div class="regalo-tapa absolute inset-0 z-30 flex items-center justify-center bg-rose-500 rounded-full border-[6px] border-rose-300 transform origin-bottom transition-transform duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-rotate-3 group-hover:scale-105">
+    <span class="text-7xl drop-shadow-md">🎁</span>
   </div>
-
-  <p
-    class="absolute -bottom-10 left-1/2 -translate-x-1/2 font-bold text-gray-300 uppercase tracking-widest text-sm transition-colors group-hover:text-white"
-  >
+  
+  <p class="absolute -bottom-14 left-1/2 -translate-x-1/2 font-extrabold text-orange-800 uppercase tracking-[0.2em] text-sm transition-colors group-hover:text-rose-500 whitespace-nowrap">
     {label}
   </p>
 </div>
-
-<style is:global>
-  .tapa-abierta {
-    transform: translateY(-150px) rotate(35deg) scale(1.3) !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    transition: all 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
-  }
-</style>

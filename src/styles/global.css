@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1a1412; }
+::-webkit-scrollbar-thumb { background: #ea580c; border-radius: 4px; }
