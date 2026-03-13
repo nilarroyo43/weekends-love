@@ -1,36 +1,60 @@
 {
   "id": "finde-14-marzo",
   "fecha": "2026-03-14",
-  "titulo": "Finde de desconexión en BCN",
-  "imagens_splash": "/img/ps2.jpg",
+  "titulo": "Finde de los 4 meses",
+  "imagens_splash": "/img/jijij.jpeg",
   
   "img_circulo_actividades": "/img/rambla_gava.jpg",
-  "img_circulo_comida": "/img/Restaurant_basico.jpg",
+  "img_circulo_comida": "/img/Restaurante.jpg",
   "img_circulo_peliculas": "/img/harry_potter.jpg",
 
   "actividades": [
     { 
-      "tipo": "amigos", 
-      "desc": "Tardeo en Gracia 🍻",
-      "detalle": "Iremos con los amigos por la tarde a algún bar chulo y nos lo pasaremos en grande charlando y bebiendo cerveza hasta que caiga el sol.",
-      "imagen": "/img/foto-bar.jpg"
+      "tipo": "Basket", 
+      "desc": "partidito basket 17:15",
+      "detalle": "Te tocara vere al teu jugador preferit, meter sus 4 miseros puntitos i al baquillo, pero i que 4 puntos eh",
+      "imagen": "/img/n_basket.jpeg"
+    },
+    { 
+      "tipo": "Bolera", 
+      "desc": "Bolera al barnasud despues del partit",
+      "detalle": "Bolera a les per la tarde nit al barnasud, te humillo un poquet i chill",
+      "imagen": "https://ilusiona.com/wp-content/uploads/2025/03/020-1-scaled.jpg"
+    },
+    { 
+      "tipo": "Padel", 
+      "desc": "Padel a les 10:30",
+      "detalle": "Anirem al Padel a jugar contra el Miret i la Judith, tocara demostra rqui es la millor parella",
+      "imagen": "https://propadel.es/wp-content/uploads/2025/10/IMG_7181-2-scaled-e1764841334485.webp"
+    },
+    { 
+      "tipo": "Ajedrez", 
+      "desc": "Ajedrez per la tarde",
+      "detalle": "Revanchita en casita, ajedrez, tu blacnas yo negras, que gane el mejor",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Chess_game_Staunton_No._6.jpg/330px-Chess_game_Staunton_No._6.jpg"
     }
   ],
   "comida": [
     { 
-      "momento": "Cena Sábado", 
-      "lugar": "Pizzería Nápoles 🍕", 
-      "detalle": "He reservado mesa para las 21:30 en tu sitio favorito. ¡Toca ponerse las botas con una buena pizza de trufa!",
-      "ubicacion": "https://www.google.com/maps/place/Pizzería+Nápoles/@41.385094,2.177692,17z/data=!3m1!4b1!4m8!3m7!1s0x12a4a3b5f8c9d5f9:0x1c8c8c8c8c8c8c8c!8m2!3d41.385094!4d2.177692!9m0!",
-      "imagen": "/img/pizza-napoles.jpg"
+      "momento": "Desayunito Diumenge", 
+      "lugar": "Croissanteria Héctor 🥐", 
+      "detalle": "Anirem a la Croissanteria Héctor a esmorçar els millor Croissants de Gavà, desayunito por el culo.",
+      "ubicacion": "https://www.google.com/maps/place/Croissanteria+H%C3%A9ctor/@41.3052127,2.0077385,3a,75y,136.58h,89.03t/data=!3m7!1e1!3m5!1sjbpPtBjtig6BeAq-xJJ0Fg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.9737553521638063%26panoid%3DjbpPtBjtig6BeAq-xJJ0Fg%26yaw%3D136.5843895157265!7i16384!8i8192!4m6!3m5!1s0x12a49ce00d4c7995:0x9a4b841d95c1118e!8m2!3d41.3049867!4d2.0078879!16s%2Fg%2F1thzqygr?authuser=0&entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D",
+      "imagen": "https://elbruguersdigital.cat/wp-content/uploads/2024/07/IMG_9100.jpg"
     }
   ],
   "peliculas": [
     { 
-      "momento": "Sábado noche", 
-      "pelicula": "Matilda", 
-      "detalle": "Sesión de manta y peli en el sofá para recordar la infancia. Las palomitas corren de mi cuenta.",
-      "url_cartel": "/img/poster-matilda.jpg"
-    }
+      "momento": "Disabte nit", 
+      "pelicula": "Noche en el museo 🎬", 
+      "detalle": "Sesión de manta y peli en el sofá amb pelicula molt top. Parte dos de noche en el museo,jijiji",
+      "url_cartel": "https://www.aceprensa.com/wp-content/uploads/2009/05/18360-0.jpg"
+    },
+      { 
+        "momento": "Diumenge tarde-nit", 
+        "pelicula": "zootropolis 🎬", 
+        "detalle": "tardecita en el super sofá de pelicula molt top. Zootropolis, que despues hem de vore la segona part",
+        "url_cartel": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019b3a3f-71d6-7b26-91f1-4f2105189aec/compose?aspectRatio=1.78&format=webp&width=1200"
+      }
   ]
 }
