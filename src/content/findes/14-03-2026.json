@@ -2,11 +2,11 @@
   "id": "finde-14-marzo",
   "fecha": "2026-03-14",
   "titulo": "Finde de desconexión en BCN",
-  "imagens_splash": "/ps2.jpg",
+  "imagens_splash": "/img/ps2.jpg",
   
-  "img_circulo_actividades": "/img/circulo-amigos.jpg",
-  "img_circulo_comida": "/img/circulo-pizza.jpg",
-  "img_circulo_peliculas": "/img/circulo-cine.jpg",
+  "img_circulo_actividades": "/img/rambla_gava.jpg",
+  "img_circulo_comida": "/img/Restaurant_basico.jpg",
+  "img_circulo_peliculas": "/img/harry_potter.jpg",
 
   "actividades": [
     { 

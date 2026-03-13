@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import SplashScreen from "../components/Splash.astro"; // 1. Importamos el componente
+import SplashScreen from "../components/Splash.astro"; 
 import { getEntry } from "astro:content";
 
-const id_finde = "14-03-2026"; // Cambia esto por el ID de tu JSON
+const id_finde = "14-03-2026"; 
 const plan = await getEntry("findes", id_finde);
 // 2. Extraemos 'imagens_splash' de tu JSON
 const { titulo, fecha, imagens_splash } = plan.data;
@@ -14,14 +14,14 @@ const { titulo, fecha, imagens_splash } = plan.data;
 
  <main class="min-h-screen flex flex-col items-center justify-center p-6 text-center bg-orange-50 relative">
     
-    <p class="text-orange-400 tracking-[0.3em] text-xs font-bold uppercase mb-4">Drop Exclusivo</p>
+    <p class="text-orange-400 tracking-[0.3em] text-xs font-bold uppercase mb-4">Exclusiu para Nil i Lluna</p>
     
     <h1 transition:name="titulo-plan" class="text-5xl md:text-7xl font-black mb-16 text-orange-950 uppercase tracking-tighter drop-shadow-sm">{titulo}</h1>
 
     <div id="countdown" data-fecha={fecha} class="flex items-start justify-center gap-4 md:gap-12 text-6xl md:text-[9rem] leading-none font-black text-orange-950 mb-24 font-sans tracking-tighter drop-shadow-sm">
       <div class="flex flex-col items-center">
         <span id="days">00</span>
-        <span class="text-xs md:text-sm text-orange-400 uppercase tracking-[0.2em] mt-4 font-bold">Días</span>
+        <span class="text-xs md:text-sm text-orange-400 uppercase tracking-[0.2em] mt-4 font-bold">Dies</span>
       </div>
       <span class="text-orange-300/50 -mt-2 md:-mt-6">:</span>
       <div class="flex flex-col items-center">
@@ -41,11 +41,11 @@ const { titulo, fecha, imagens_splash } = plan.data;
     </div>
 
     <a href={`/plan/${plan.id}`} class="inline-block animate-latido px-12 py-5 bg-orange-950 text-orange-50 rounded-full font-bold tracking-[0.2em] text-sm uppercase transition-all hover:bg-orange-800 hover:scale-105 shadow-2xl shadow-orange-900/20">
-      Descubrir ✨
+      Descubre ✨
     </a>
 
     <a href="/recuerdos" class="mt-16 text-orange-400 hover:text-orange-600 transition-colors text-xs uppercase tracking-[0.2em] font-bold">
-      Nuestros recuerdos 📖
+      Records de findes 📖
     </a>
 
   </main>
